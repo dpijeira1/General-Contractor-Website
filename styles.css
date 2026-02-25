@@ -20,8 +20,8 @@ body {
 
 /* Header */
 header {
-  background: #111;
-  color: white;
+  background: #1556a0;
+  color: rgb(255, 255, 255);
   padding: 1rem 0;
 }
 
@@ -32,13 +32,13 @@ header {
 }
 
 nav a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 1.5rem;
 }
 
 nav a:hover {
-  color: #f4b400;
+  color: #000000;
 }
 
 /* Hero */
@@ -63,8 +63,8 @@ nav a:hover {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background: #f4b400;
-  color: #111;
+  background: #1556a0;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
