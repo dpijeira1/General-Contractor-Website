@@ -145,10 +145,10 @@
         let current = "";
 
         sections.forEach((section) => {
-          const sectionTop = section.offsetTop - 100;
-          const sectionHeight = section.clientHeight;
+          const sectionTop = section.getBoundingClientRect().top;
+          const sectionHeight = section.offsetHeight;
 
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          if (sectionTop <= 120 && sectionTop + sectionHeight > 120) {
             current = section.getAttribute("id");
           }
         });

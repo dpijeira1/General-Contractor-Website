@@ -82,6 +82,7 @@ nav a:hover {
 /* Sections */
 .section {
   padding: 4rem 0;
+  scroll-margin-top: 100px;
 }
 
 .section.light {
