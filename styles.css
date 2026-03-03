@@ -23,6 +23,9 @@ header {
   background: #0a1b2f;
   color: rgb(255, 255, 255);
   padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav {
