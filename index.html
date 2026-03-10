@@ -32,16 +32,17 @@
       <div class="container nav">
         <img
           class="logo"
-          width="150px"
+          width="160px"
           src="images/voltus.jpg"
           alt="Voltus Construction Logo"
+          href="/"
         />
         <nav>
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
-          <a href="/es/" class="lang-switch">Español</a>
+          <a hidden="true" href="/es/" class="lang-switch">Español</a>
         </nav>
       </div>
     </header>
@@ -154,6 +155,13 @@
     </footer>
 
     <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+      window.addEventListener("load", () => {
+        window.scrollTo(0, 0);
+      });
+
       const sections = document.querySelectorAll("section");
       const navLinks = document.querySelectorAll("nav a");
       const header = document.querySelector("header");
@@ -161,19 +169,27 @@
       window.addEventListener("scroll", () => {
         let current = "";
 
-        sections.forEach((section) => {
-          const sectionTop = section.getBoundingClientRect().top;
-          const sectionHeight = section.offsetHeight;
+        // Only highlight nav links if user has scrolled past the top
+        if (window.scrollY > 0) {
+          sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const sectionHeight = section.offsetHeight;
 
-          if (sectionTop <= 120 && sectionTop + sectionHeight > 120) {
-            current = section.getAttribute("id");
-          }
-        });
+            if (sectionTop <= 120 && sectionTop + sectionHeight > 120) {
+              current = section.getAttribute("id");
+            }
+          });
+        }
 
         navLinks.forEach((link) => {
           link.classList.remove("active");
-          if (link.getAttribute("href").includes(current)) {
-            link.classList.add("active");
+          if (current) {
+            const href = link.getAttribute("href");
+            const targetId = href.substring(1); // Remove # from href
+            // Only highlight if the section exists on the page
+            if (document.getElementById(targetId) && href.includes(current)) {
+              link.classList.add("active");
+            }
           }
         });
       });
