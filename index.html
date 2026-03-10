@@ -117,17 +117,30 @@
             Fill out our contact form and we will get back to you within 24
             hours.
           </p>
-          <form>
-            <input type="text" placeholder="Name" required />
-            <input type="email" placeholder="Email" required />
-            <textarea placeholder="Message" required></textarea>
+          <form action="https://formspree.io/f/xaqpqraz" method="post">
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Voltus Construction Contact Form Submission"
+            />
+            <input type="text" name="name" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://voltusconstruction.com/thank-you.html"
+            />
+            <textarea name="message" placeholder="Message" required></textarea>
+            <input type="text" name="_gotcha" style="display: none" />
             <button type="submit">Send Message</button>
           </form>
         </div>
         <p>Call us directly for a fast response:</p>
         <a href="tel:7862364546" class="contact">(786) 236-4546</a>
         <p>Or email us:</p>
-        <a href="mailto:niquemio@aol.com" class="contact">niquemio@aol.com</a>
+        <a href="mailto:migdel@voltusconstruction.com" class="contact"
+          >migdel@voltusconstruction.com</a
+        >
       </div>
     </section>
 
