@@ -98,7 +98,7 @@ h2 {
 /* Grid */
 .grid {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
@@ -127,6 +127,30 @@ h2 {
   width: 300px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+/* Service Area */
+.service-area-wrapper {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.service-area-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.service-area-map {
+  flex: 1;
+  min-width: 300px;
+}
+
+.service-area-map iframe {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
 }
 
 /* Contact */
