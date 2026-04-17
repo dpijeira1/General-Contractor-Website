@@ -35,7 +35,7 @@
       <div class="container nav">
         <img
           class="logo"
-          width="160px"
+          width="150px"
           src="images/voltus.jpg"
           alt="Voltus Construction Logo"
           href="/"
@@ -54,7 +54,10 @@
     <section class="hero fade-in">
       <div class="hero-content">
         <h2>Quality Construction You Can Trust</h2>
-        <p>Serving South Florida with integrity and craftsmanship.</p>
+        <p>
+          Serving Miami and the South Florida area with integrity and
+          craftsmanship.
+        </p>
         <a href="#contact" class="btn">Request a Free Estimate</a>
       </div>
     </section>
@@ -104,22 +107,32 @@
       <div class="container">
         <h2>Recent Projects</h2>
         <div class="gallery">
-          <img src="images/design1.jpg" alt="Project 1" />
-          <img src="images/design2.jpg" alt="Project 2" />
-          <img src="images/project1.jpg" alt="Project 3" />
+          <a href="images/design1.jpg">
+            <img src="images/design1.jpg" alt="Kitchen remodel project" />
+          </a>
+          <a href="images/design2.jpg">
+            <img src="images/design2.jpg" alt="Bathroom renovation" />
+          </a>
+          <a href="images/project1.jpg">
+            <img src="images/project1.jpg" alt="Home construction project" />
+          </a>
         </div>
       </div>
     </section>
 
+    <div id="lightbox">
+      <span id="close">&times;</span>
+      <img id="lightbox-img" src="" />
+    </div>
+
     <!-- Contact -->
     <section id="contact" class="section light fade-in">
       <div class="container">
-        <h2>Contact Us</h2>
+        <h2>Free Consultation</h2>
 
         <div class="contact-info">
           <p>
-            Fill out our contact form and we will get back to you within 24
-            hours.
+            Fill out our contact form, send us a message, or give us a call.
           </p>
           <form
             id="contactForm"
@@ -149,6 +162,17 @@
         <a href="mailto:migdel@voltusconstruction.com" class="contact"
           >migdel@voltusconstruction.com</a
         >
+      </div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps?q=Miami,FL&output=embed"
+          width="100%"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
       </div>
     </section>
 
@@ -258,6 +282,30 @@
               );
             });
         });
+    </script>
+    <script>
+      const galleryLinks = document.querySelectorAll(".gallery a");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.getElementById("close");
+
+      galleryLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          lightbox.style.display = "flex";
+          lightboxImg.src = link.href;
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target !== lightboxImg) {
+          lightbox.style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>
