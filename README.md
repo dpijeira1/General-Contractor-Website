@@ -7,3 +7,5 @@ A simple website for a friend
 ### Add sticky call now button
 
 jj
+
+jpg lowercase/uppercase vercel deployment issue
